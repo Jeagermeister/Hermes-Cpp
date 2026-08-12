@@ -1,0 +1,81 @@
+# Phase 0 — Hermes vs OpenCode diagnostic
+
+Runs the **six local-agent diagnostic stages under Hermes Agent**, so they can be compared
+against the same stages run under OpenCode in `~/Source/local-agent-integration-diagnostic`.
+
+## The question this answers
+
+Some findings from the OpenCode run are almost certainly **tool-design artifacts, not model
+behaviour**:
+
+- *"E4B treats rendered end-of-file annotations as literal content during exact edits"* — that
+  is OpenCode's file rendering, not Gemma.
+- *"Prefer patch/write tools or line-based edits for very short files"* — that is OpenCode's
+  edit tool design.
+
+The distinction matters enormously for Hermes-Cpp: a **model-intrinsic** failure is one you must
+design *around*, while a **harness** failure is one you can design *away*. Running identical
+stages through a second harness is the cleanest control available.
+
+**The output that matters is the delta**, not the score. Where the same model behaves
+differently under two harnesses, the cause is tool design — and that becomes a requirements list.
+
+## Running it
+
+```bash
+./run_hermes_diagnostic.py --models qwen-9b gemma-12b gemma-e4b --repeats 3
+./run_hermes_diagnostic.py --models gemma-12b --stages 01_read --repeats 1 --tag <installed>  # smoke
+```
+
+Results land in `results/`, logs in `logs/`, agent working trees in `runs/` (gitignored).
+
+## Three constraints that make or break the comparison
+
+**1. Run it on `kitchen-desktop`.** The OpenCode baseline came from there. Running this on the
+MSI laptop would confound *harness* differences with *GPU* differences — two variables, one
+measurement. Every result file records `os.uname().nodename` so this cannot be lost later.
+
+**2. Three repeats minimum.** The existing data has identical configurations scoring **6/6 and
+4/6**, and one Q8 run that erased `tally.py`. At that variance, single runs are noise. The script
+warns below three.
+
+**3. The stages are byte-identical, on purpose.** `stages.py` was extracted verbatim from
+`local-agent-integration-diagnostic/scripts/run_all.py`. **Do not edit it.** Any change turns a
+controlled comparison into two unrelated experiments.
+
+## Prerequisites
+
+- **Hermes Agent installed on the machine running this** (`~/.local/bin/hermes`). It is currently
+  only on the MSI laptop.
+- **The `num_ctx`-pinned Ollama variants** the OpenCode run used, built from
+  `local-agent-tournament/models/*.Modelfile`:
+  ```bash
+  ollama create tournament-qwen-9b:32k   -f ~/Source/local-agent-tournament/models/qwen-9b-32k.Modelfile
+  ollama create tournament-gemma-12b:32k -f ~/Source/local-agent-tournament/models/gemma-12b-32k.Modelfile
+  ollama create tournament-gemma-e4b:32k -f ~/Source/local-agent-tournament/models/gemma-e4b-32k.Modelfile
+  ```
+  The script preflights these and refuses to start if any are missing — a 54-run job should not
+  fail on run 1.
+
+## A trap this harness handles
+
+**Hermes exits 0 even when the API call fails outright.** A run that never reached the model
+would otherwise be scored as a legitimate result, which is worse than a crash because it looks
+like data. Every record carries `valid` and `harness_error`; invalid runs are not scored, and the
+summary refuses to let a partial dataset pass quietly.
+
+Verified in both directions on 2026-08-12: a working model scores `valid: true` with the marker
+detected, and a bogus tag scores `valid: false` with no scoring attempted.
+
+## Scoring
+
+Mirrors the OpenCode harness:
+
+| Stage | Scored by |
+|---|---|
+| `01_read` | marker string echoed in output |
+| `02_edit` | `settings.py` contains `fixed` |
+| `03_shell` – `06_two_file` | `pytest -q` in the working tree |
+
+Comparison against the OpenCode baseline is deliberately left manual for now — the point is to
+*look* at where behaviour diverges, not to reduce it to a single number too early.

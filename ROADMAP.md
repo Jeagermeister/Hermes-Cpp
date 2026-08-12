@@ -40,9 +40,13 @@ anything intrinsic to the model. Separating those is the point of Phase 0.
 **Question:** which OpenCode findings are model-intrinsic, and which are tool-design artifacts?
 A finding you must design *around* is very different from one you can design *away*.
 
+**The harness is written and smoke-tested — see [`bench/`](./bench/).**
+
 - [ ] **Install Hermes Agent on `kitchen-desktop`.** It is currently only on the MSI laptop.
-- [ ] **Re-run the six diagnostic stages on Hermes** — read, edit, shell interpretation,
-      edit-test continuation, failed-edit recovery, two-file change — same models, same tasks.
+- [ ] **Build the `num_ctx`-pinned Ollama variants** from
+      `local-agent-tournament/models/*.Modelfile`. `bench/run_hermes_diagnostic.py` preflights
+      these and refuses to start if any are missing.
+- [ ] **Run it:** `bench/run_hermes_diagnostic.py --models qwen-9b gemma-12b gemma-e4b --repeats 3`
 - [ ] **Run on `kitchen-desktop`, not the laptop.** The OpenCode results came from there;
       running the comparison on different hardware would confound harness with GPU.
 - [ ] **Three repeats minimum per model per stage.** Non-negotiable given 6/6-vs-4/6 variance on
