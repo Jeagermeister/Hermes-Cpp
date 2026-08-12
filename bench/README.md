@@ -67,6 +67,43 @@ summary refuses to let a partial dataset pass quietly.
 Verified in both directions on 2026-08-12: a working model scores `valid: true` with the marker
 detected, and a bogus tag scores `valid: false` with no scoring attempted.
 
+## Sampling, determinism, and why the variance exists
+
+**The tournament Modelfiles pin only `num_ctx`.** No temperature, no seed, no sampling
+parameters anywhere in the original harness. Every run therefore samples stochastically at
+model defaults with no fixed seed — which is a complete explanation for the 6/6-versus-4/6
+result on identical inputs. That variance is not mysterious, and not a quantization effect:
+**nothing was pinning the dice.**
+
+Two modes, and the choice matters:
+
+| Mode | Use for | Why |
+|---|---|---|
+| **Default** (unpinned) | **Phase 0** — Hermes vs OpenCode | The OpenCode baseline ran at model-default sampling. Matching it is what makes the comparison like-for-like. Handle the noise with repeats. |
+| `--deterministic` | **GPU A/B**, or isolating any backend effect | Pins `temperature 0` and a fixed `seed`, so a difference is attributable to the thing you changed rather than to sampling. |
+
+```bash
+./run_hermes_diagnostic.py --models qwen-9b --repeats 3                    # Phase 0
+./run_hermes_diagnostic.py --models qwen-9b --repeats 3 --deterministic    # GPU A/B
+```
+
+`--deterministic` builds a `<model>-det:<seed>` variant with `temperature 0` and `seed` pinned,
+then runs against that. It has to work this way: **there are no `OLLAMA_TEMPERATURE` or
+`OLLAMA_SEED` environment variables** — sampling is per-request or per-Modelfile, so setting
+env vars would be silently ignored and produce *fake* determinism.
+
+## Record the GPU
+
+Set `BENCH_GPU` so every result file names the card it ran on:
+
+```bash
+BENCH_GPU="Radeon Pro W7900 48GB" ./run_hermes_diagnostic.py --models qwen-9b --repeats 3
+```
+
+Kitchen's card changes on **2026-08-14** (W7900 48 GB ROCm → RTX PRO 5000 72 GB CUDA). Results
+without a GPU field cannot be safely compared across that date, and the field defaults to a
+loud `UNRECORDED` rather than to a guess.
+
 ## Scoring
 
 Mirrors the OpenCode harness:

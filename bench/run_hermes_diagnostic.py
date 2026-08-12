@@ -20,6 +20,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -58,8 +59,34 @@ def pytest_result(path: Path) -> dict | None:
             "tail": r.stdout.strip().splitlines()[-3:]}
 
 
-def run_stage(model_key: str, stage_name: str, rep: int) -> dict:
+def make_deterministic_variant(tag: str, seed: int) -> str:
+    """Build a temperature-0, fixed-seed variant of `tag` and return its name.
+
+    Sampling parameters are per-request or per-Modelfile in Ollama - there are no
+    OLLAMA_TEMPERATURE / OLLAMA_SEED environment variables, and setting them would
+    be silently ignored. Since Hermes owns the API call, a derived model is the
+    only reliable way to pin sampling from out here.
+    """
+    det = f"{tag.split(':')[0]}-det:{seed}"
+    # `ollama create -f -` does not read stdin, so the Modelfile has to hit disk.
+    with tempfile.NamedTemporaryFile("w", suffix=".Modelfile", delete=False) as fh:
+        fh.write(f"FROM {tag}\nPARAMETER temperature 0\nPARAMETER seed {seed}\n")
+        mf = fh.name
+    try:
+        proc = subprocess.run(["ollama", "create", det, "-f", mf],
+                              text=True, capture_output=True, timeout=180, check=False)
+    finally:
+        os.unlink(mf)
+    if proc.returncode != 0:
+        raise RuntimeError(f"could not build deterministic variant {det}: {proc.stderr.strip()[:200]}")
+    return det
+
+
+def run_stage(model_key: str, stage_name: str, rep: int, deterministic: bool = False,
+              seed: int = 1337) -> dict:
     tag = MODELS[model_key]
+    if deterministic:
+        tag = make_deterministic_variant(tag, seed)
     stage = STAGES[stage_name]
     work = RUNS / f"{model_key}-{stage_name}-r{rep}"
     shutil.rmtree(work, ignore_errors=True)
@@ -70,7 +97,13 @@ def run_stage(model_key: str, stage_name: str, rep: int) -> dict:
 
     cmd = [str(HERMES), "-z", stage["prompt"], "--in", str(work),
            "-m", tag, "--provider", "custom", "--yolo"]
-    env = {**os.environ, "PATH": f"{Path.home()}/.local/bin:{os.environ.get('PATH','')}"}
+    # Determinism is opt-in on purpose. The OpenCode baseline ran at model-default
+    # sampling with no seed, which is why identical configs there scored 6/6 and 4/6.
+    # Matching that default keeps Phase 0 like-for-like; pinning it is for isolating
+    # a genuine hardware or backend effect, where sampling noise would otherwise
+    # swamp the signal.
+    env_extra = {}
+    env = {**os.environ, "PATH": f"{Path.home()}/.local/bin:{os.environ.get('PATH','')}", **env_extra}
 
     start = time.monotonic()
     timed_out = False
@@ -101,6 +134,8 @@ def run_stage(model_key: str, stage_name: str, rep: int) -> dict:
         "log": str(log.relative_to(ROOT)),
         "worktree": str(work.relative_to(ROOT)),
         "when": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "deterministic": deterministic,
+        "seed": seed if deterministic else None,
     }
     # 01_read and 02_edit have no tests; the OpenCode harness scored them the same way.
     if harness_error:
@@ -124,6 +159,12 @@ def main() -> int:
     ap.add_argument("--repeats", type=int, default=3,
                     help="3 minimum for real results - identical configs have scored 6/6 and 4/6")
     ap.add_argument("--out", default=None, help="results filename (default: timestamped)")
+    ap.add_argument("--deterministic", action="store_true",
+                    help="build temperature-0, fixed-seed model variants and run against those. "
+                         "Removes sampling "
+                         "noise, but makes results NOT comparable to the OpenCode baseline, "
+                         "which ran at model-default sampling. Use for GPU A/B, not for Phase 0.")
+    ap.add_argument("--seed", type=int, default=1337, help="seed used with --deterministic")
     ap.add_argument("--tag", default=None,
                     help="override the Ollama tag for ALL models (smoke testing only - "
                          "breaks comparability with the OpenCode baseline)")
@@ -165,7 +206,7 @@ def main() -> int:
             for rep in range(1, args.repeats + 1):
                 n += 1
                 print(f"[{n}/{total}] {model} {stage} r{rep} ... ", end="", flush=True)
-                rec = run_stage(model, stage, rep)
+                rec = run_stage(model, stage, rep, args.deterministic, args.seed)
                 records.append(rec)
                 print(("INVALID: " + rec["harness_error"] + " " if rec.get("harness_error") else "")
                       + f"{rec['seconds']}s"
@@ -181,6 +222,8 @@ def main() -> int:
                 "Same stages, same models. The delta is the finding.",
         "machine": os.uname().nodename,
         "repeats": args.repeats,
+        "deterministic": args.deterministic,
+        "gpu": os.environ.get("BENCH_GPU", "UNRECORDED - set BENCH_GPU to name the card"),
         "records": records,
     }, indent=2))
     invalid = [r for r in records if not r.get("valid")]
