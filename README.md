@@ -37,3 +37,13 @@ Gitea (`git@gitea:Jeagermeister/Hermes-Cpp.git`) is authoritative, consistent wi
 of the setup — see the `gitea-selfhost` repo. The reference clone deliberately does **not**
 live there: it is a pure function of upstream, so backing it up would be storing something
 freely regenerable.
+
+## License
+
+**MIT** — see [LICENSE](./LICENSE).
+
+Upstream Hermes Agent is also MIT (Copyright (c) 2025 Nous Research), so the licenses are
+compatible. Worth keeping in mind as the port proceeds: MIT requires the copyright notice to
+travel with *substantial portions* of the original. Behaviour reimplemented from reading the
+Python is your own work; anything closely transliterated is arguably derivative, and the
+courteous and safe move is to note upstream in the file header where that happens.
