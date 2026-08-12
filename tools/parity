@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Report which subsystems have drifted behind upstream, at release-tag granularity.
+#   tools/parity           - staleness summary
+#   tools/parity <subsys>  - commits touching that subsystem since it was ported
+set -euo pipefail
+
+REF="${HERMES_REF_REPO:-$HOME/Source/hermes-upstream}"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+LEDGER="$ROOT/parity.tsv"
+
+[ -d "$REF/.git" ] || { echo "No reference clone at $REF (see README)" >&2; exit 1; }
+git -C "$REF" fetch --quiet origin main --tags 2>/dev/null || echo "(offline - using cached refs)" >&2
+
+LATEST="$(git -C "$REF" tag --sort=-creatordate | grep -E '^v[0-9]' | head -1)"
+
+if [ $# -ge 1 ]; then
+  row="$(grep -P "^$1\t" "$LEDGER" || true)"
+  [ -n "$row" ] || { echo "Unknown subsystem: $1" >&2; exit 1; }
+  path=$(cut -f2 <<<"$row"); from=$(cut -f3 <<<"$row")
+  [ "$from" = "-" ] && { echo "$1 not started. Full upstream tree: $REF/$path"; exit 0; }
+  echo "=== $1 ($path): $from -> $LATEST ==="
+  git -C "$REF" log --oneline --no-decorate "$from..$LATEST" -- "$path"
+  echo
+  echo "Diff: git -C $REF diff $from..$LATEST -- $path"
+  exit 0
+fi
+
+printf '%-14s %-16s %-14s %-9s %s\n' SUBSYSTEM PORTED_FROM UPSTREAM_NOW STATUS "COMMITS_BEHIND"
+printf '%.0s-' {1..72}; echo
+while IFS=$'\t' read -r sub path from status; do
+  [[ "$sub" =~ ^#|^$ ]] && continue
+  if [ "$from" = "-" ]; then
+    behind="-"
+  else
+    behind=$(git -C "$REF" rev-list --count "$from..$LATEST" -- "$path" 2>/dev/null || echo "?")
+    [ "$behind" != "0" ] && [ "$behind" != "?" ] && status="STALE"
+  fi
+  printf '%-14s %-16s %-14s %-9s %s\n' "$sub" "$from" "$LATEST" "$status" "$behind"
+done < "$LEDGER"
+echo
+echo "Detail:  tools/parity <subsystem>"

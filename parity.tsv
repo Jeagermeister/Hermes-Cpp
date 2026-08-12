@@ -1,0 +1,16 @@
+# Machine-readable parity ledger. One row per subsystem.
+# ported_from = upstream RELEASE TAG this subsystem was ported from ("-" = not started).
+# Deliberately tag-granular, not commit-granular: upstream lands ~1100 commits/month
+# but only ~2 releases. Tags are the review unit; drill to commits only when porting.
+#
+# subsystem	upstream_path	ported_from	status
+agent	agent/	-	NOT_STARTED
+tools	tools/	-	NOT_STARTED
+providers	providers/	-	NOT_STARTED
+hermes_cli	hermes_cli/	-	NOT_STARTED
+gateway	gateway/	-	NOT_STARTED
+cron	cron/	-	NOT_STARTED
+acp_adapter	acp_adapter/	-	NOT_STARTED
+tui_gateway	tui_gateway/	-	NOT_STARTED
+skills	skills/	-	NOT_STARTED
+plugins	plugins/	-	NOT_STARTED
