@@ -17,6 +17,8 @@ if [ $# -ge 1 ]; then
   row="$(grep -P "^$1\t" "$LEDGER" || true)"
   [ -n "$row" ] || { echo "Unknown subsystem: $1" >&2; exit 1; }
   path=$(cut -f2 <<<"$row"); from=$(cut -f3 <<<"$row")
+  status=$(cut -f4 <<<"$row")
+  [ "$status" = "OUT_OF_SCOPE" ] && { echo "$1 is OUT OF SCOPE - upstream drift here is irrelevant."; exit 0; }
   [ "$from" = "-" ] && { echo "$1 not started. Full upstream tree: $REF/$path"; exit 0; }
   echo "=== $1 ($path): $from -> $LATEST ==="
   git -C "$REF" log --oneline --no-decorate "$from..$LATEST" -- "$path"
@@ -29,7 +31,9 @@ printf '%-14s %-16s %-14s %-9s %s\n' SUBSYSTEM PORTED_FROM UPSTREAM_NOW STATUS "
 printf '%.0s-' {1..72}; echo
 while IFS=$'\t' read -r sub path from status; do
   [[ "$sub" =~ ^#|^$ ]] && continue
-  if [ "$from" = "-" ]; then
+  if [ "$status" = "OUT_OF_SCOPE" ]; then
+    behind="n/a"
+  elif [ "$from" = "-" ]; then
     behind="-"
   else
     behind=$(git -C "$REF" rev-list --count "$from..$LATEST" -- "$path" 2>/dev/null || echo "?")
@@ -39,3 +43,4 @@ while IFS=$'\t' read -r sub path from status; do
 done < "$LEDGER"
 echo
 echo "Detail:  tools/parity <subsystem>"
+echo "Scope is set in parity.tsv - OUT_OF_SCOPE rows are deliberate, see README."
