@@ -37,6 +37,18 @@ anything intrinsic to the model. Separating those is the point of Phase 0.
 
 ## Phase 0 — Establish which findings actually transfer
 
+> ### ⚠ There is a deadline on this one
+>
+> An **RTX PRO 5000 (72 GB, CUDA)** replaces Kitchen's **W7900 (48 GB, ROCm)** on
+> **2026-08-14**. Every OpenCode result was produced on the W7900.
+>
+> Run Phase 0 **before** the swap and the comparison is clean: same machine, same card, only
+> the harness differs. Run it after, and Hermes-on-new-GPU versus OpenCode-on-old-GPU
+> confounds harness with hardware — which is the exact error this phase exists to avoid.
+>
+> If the window is missed, the honest fix is re-running **both** harnesses on the new card,
+> not reasoning across the gap.
+
 **Question:** which OpenCode findings are model-intrinsic, and which are tool-design artifacts?
 A finding you must design *around* is very different from one you can design *away*.
 
@@ -121,4 +133,8 @@ Upstream is ~870k lines of non-test Python. A wholesale port is not the goal and
   consumes it quickly, so what gets sent, and what gets summarised, is a first-class design
   problem rather than an optimisation.
 - **Which models, on which machines.** A full list exists; the tournament harnesses already
-  encode part of it.
+  encode part of it. **72 GB changes this question** — the tournaments used 9B–12B because that
+  is what fit in 48 GB. A 70B-class model at Q4 becomes viable, including upstream's own
+  Hermes 4 70B. Whether a supervisor architecture is still the right answer when the model is
+  6× larger is an open question, not a settled one: the bounded-session finding came from
+  watching *small* models drift.
