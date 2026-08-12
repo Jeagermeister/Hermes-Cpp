@@ -13,7 +13,7 @@ Driving **local** models to do real filesystem work: create, modify, move, summa
 files, either directly or when called as a tool by a larger model.
 
 The design follows an empirical finding rather than a preference. Local-model tournaments run on
-`kitchen-desktop` (see `local-agent-tournament`, `local-agent-integration-diagnostic`) concluded:
+`kitchen-desktop` (the `local-agent-benchmarks` repo) concluded:
 
 > Use an external supervisor that checks repository state and reinvokes the model with one
 > concrete remaining failure instead of relying on a single long autonomous session.
@@ -34,6 +34,9 @@ structural:
 | **Startup** | Bounded sessions mean *many* process launches. Python pays 1–3 s of interpreter and imports every time; a static binary pays ~10 ms. Under this architecture the advantage compounds per session. |
 | **Verification** | Checking what the model actually did — walking trees, hashing, diffing — happens every turn. That is real work, and native code is good at it. |
 | **Distribution** | One binary, versus a Python environment plus Node plus system dependencies. |
+
+The evidence lives in its own repo: **[`local-agent-benchmarks`](https://gitea-ec2.tail328f9a.ts.net/Jeagermeister/local-agent-benchmarks)**
+— four harnesses, all runs to date executed on `kitchen-desktop` through OpenCode.
 
 ## Layout
 

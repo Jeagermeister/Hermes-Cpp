@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run the six local-agent diagnostic stages under HERMES AGENT.
 
-Companion to ~/Source/local-agent-integration-diagnostic, which ran the identical
+Companion to ~/Source/local-agent-benchmarks/local-agent-integration-diagnostic, which ran the identical
 stages under OpenCode on kitchen-desktop. The point is the DELTA between the two
 harnesses: where the same model behaves differently, the cause is tool design, not
 the model - and that is a requirement for Hermes-Cpp.
@@ -148,7 +148,7 @@ def main() -> int:
             print("Missing Ollama models: " + ", ".join(missing), file=sys.stderr)
             print("Build them from local-agent-tournament/models/*.Modelfile, e.g.:\n"
                   "  ollama create tournament-qwen-9b:32k -f "
-                  "~/Source/local-agent-tournament/models/qwen-9b-32k.Modelfile",
+                  "~/Source/local-agent-benchmarks/local-agent-tournament/models/qwen-9b-32k.Modelfile",
                   file=sys.stderr)
             return 1
 
