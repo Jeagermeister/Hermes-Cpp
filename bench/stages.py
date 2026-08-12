@@ -1,5 +1,5 @@
 """The six diagnostic stages, copied VERBATIM from
-local-agent-integration-diagnostic/scripts/run_all.py.
+integration-diagnostic/scripts/run_all.py.
 
 Do not edit these. The entire value of running them under Hermes is that they are
 byte-identical to what was run under OpenCode on kitchen-desktop. Any change here

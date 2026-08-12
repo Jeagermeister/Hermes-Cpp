@@ -16,7 +16,7 @@ That architecture is not a preference. It is what the local-model tournaments co
 
 ## The evidence this is built on
 
-From `local-agent-integration-diagnostic/results/RECOMMENDATIONS.md`, run on **`kitchen-desktop`**
+From `integration-diagnostic/results/RECOMMENDATIONS.md`, run on **`kitchen-desktop`**
 through **OpenCode**:
 
 | Finding | Consequence for this project |
@@ -44,7 +44,7 @@ A finding you must design *around* is very different from one you can design *aw
 
 - [ ] **Install Hermes Agent on `kitchen-desktop`.** It is currently only on the MSI laptop.
 - [ ] **Build the `num_ctx`-pinned Ollama variants** from
-      `local-agent-tournament/models/*.Modelfile`. `bench/run_hermes_diagnostic.py` preflights
+      `tournament/models/*.Modelfile`. `bench/run_hermes_diagnostic.py` preflights
       these and refuses to start if any are missing.
 - [ ] **Run it:** `bench/run_hermes_diagnostic.py --models qwen-9b gemma-12b gemma-e4b --repeats 3`
 - [ ] **Run on `kitchen-desktop`, not the laptop.** The OpenCode results came from there;

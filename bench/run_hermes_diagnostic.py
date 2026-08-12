@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run the six local-agent diagnostic stages under HERMES AGENT.
 
-Companion to ~/Source/local-agent-benchmarks/local-agent-integration-diagnostic, which ran the identical
+Companion to ~/Source/local-agent-benchmarks/integration-diagnostic, which ran the identical
 stages under OpenCode on kitchen-desktop. The point is the DELTA between the two
 harnesses: where the same model behaves differently, the cause is tool design, not
 the model - and that is a requirement for Hermes-Cpp.
@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parent
 RUNS, LOGS, RESULTS = ROOT / "runs", ROOT / "logs", ROOT / "results"
 
 # Ollama tags. These must match the num_ctx-pinned variants built from
-# local-agent-tournament/models/*.Modelfile, or the comparison is not like-for-like.
+# tournament/models/*.Modelfile, or the comparison is not like-for-like.
 MODELS = {
     "gemma-e4b": "tournament-gemma-e4b:32k",
     "qwen-9b": "tournament-qwen-9b:32k",
@@ -146,9 +146,9 @@ def main() -> int:
         missing = [MODELS[m] for m in args.models if MODELS[m].split(":")[0] not in have]
         if missing:
             print("Missing Ollama models: " + ", ".join(missing), file=sys.stderr)
-            print("Build them from local-agent-tournament/models/*.Modelfile, e.g.:\n"
+            print("Build them from tournament/models/*.Modelfile, e.g.:\n"
                   "  ollama create tournament-qwen-9b:32k -f "
-                  "~/Source/local-agent-benchmarks/local-agent-tournament/models/qwen-9b-32k.Modelfile",
+                  "~/Source/local-agent-benchmarks/tournament/models/qwen-9b-32k.Modelfile",
                   file=sys.stderr)
             return 1
 
@@ -177,7 +177,7 @@ def main() -> int:
     out = RESULTS / (args.out or f"hermes-diagnostic-{stamp}.json")
     out.write_text(json.dumps({
         "harness": "hermes",
-        "note": "Compare against local-agent-integration-diagnostic (OpenCode). "
+        "note": "Compare against local-agent-benchmarks/integration-diagnostic (OpenCode). "
                 "Same stages, same models. The delta is the finding.",
         "machine": os.uname().nodename,
         "repeats": args.repeats,

@@ -1,7 +1,7 @@
 # Phase 0 — Hermes vs OpenCode diagnostic
 
 Runs the **six local-agent diagnostic stages under Hermes Agent**, so they can be compared
-against the same stages run under OpenCode in `~/Source/local-agent-benchmarks/local-agent-integration-diagnostic`.
+against the same stages run under OpenCode in `~/Source/local-agent-benchmarks/integration-diagnostic`.
 
 ## The question this answers
 
@@ -40,7 +40,7 @@ measurement. Every result file records `os.uname().nodename` so this cannot be l
 warns below three.
 
 **3. The stages are byte-identical, on purpose.** `stages.py` was extracted verbatim from
-`local-agent-integration-diagnostic/scripts/run_all.py`. **Do not edit it.** Any change turns a
+`integration-diagnostic/scripts/run_all.py`. **Do not edit it.** Any change turns a
 controlled comparison into two unrelated experiments.
 
 ## Prerequisites
@@ -48,11 +48,11 @@ controlled comparison into two unrelated experiments.
 - **Hermes Agent installed on the machine running this** (`~/.local/bin/hermes`). It is currently
   only on the MSI laptop.
 - **The `num_ctx`-pinned Ollama variants** the OpenCode run used, built from
-  `local-agent-tournament/models/*.Modelfile`:
+  `tournament/models/*.Modelfile`:
   ```bash
-  ollama create tournament-qwen-9b:32k   -f ~/Source/local-agent-benchmarks/local-agent-tournament/models/qwen-9b-32k.Modelfile
-  ollama create tournament-gemma-12b:32k -f ~/Source/local-agent-benchmarks/local-agent-tournament/models/gemma-12b-32k.Modelfile
-  ollama create tournament-gemma-e4b:32k -f ~/Source/local-agent-benchmarks/local-agent-tournament/models/gemma-e4b-32k.Modelfile
+  ollama create tournament-qwen-9b:32k   -f ~/Source/local-agent-benchmarks/tournament/models/qwen-9b-32k.Modelfile
+  ollama create tournament-gemma-12b:32k -f ~/Source/local-agent-benchmarks/tournament/models/gemma-12b-32k.Modelfile
+  ollama create tournament-gemma-e4b:32k -f ~/Source/local-agent-benchmarks/tournament/models/gemma-e4b-32k.Modelfile
   ```
   The script preflights these and refuses to start if any are missing — a 54-run job should not
   fail on run 1.
