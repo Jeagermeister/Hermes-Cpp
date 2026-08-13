@@ -1,0 +1,5027 @@
+{
+  "harness": "hermes-fsops",
+  "note": "Filesystem primitives for small models under Hermes Agent. Independent of the Phase 0 OpenCode comparison - do not merge the two datasets.",
+  "machine": "cachyos-x8664",
+  "gpu": "NVIDIA RTX 5080 Laptop 16GB",
+  "num_ctx": 65536,
+  "repeats": 3,
+  "reasoning": null,
+  "transcripts": false,
+  "deterministic": false,
+  "seed": null,
+  "model_tags": {
+    "llama32-3b": "fsops-llama3.2-3b-instruct-fp16:64k",
+    "qwen-4b": "fsops-qwen3.5-4b:64k",
+    "qwen-9b": "fsops-qwen3.5-9b:64k"
+  },
+  "records": [
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "01_create_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.73,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-01_create_file-r1.log",
+      "transcript": "transcripts/llama32-3b-01_create_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-01_create_file-r1",
+      "when": "2026-08-12T21:54:02+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "01_create_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-01_create_file-r2.log",
+      "transcript": "transcripts/llama32-3b-01_create_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-01_create_file-r2",
+      "when": "2026-08-12T21:54:07+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "01_create_file",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.73,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-01_create_file-r3.log",
+      "transcript": "transcripts/llama32-3b-01_create_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-01_create_file-r3",
+      "when": "2026-08-12T21:54:11+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "02_make_dirs",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.82,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-02_make_dirs-r1.log",
+      "transcript": "transcripts/llama32-3b-02_make_dirs-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-02_make_dirs-r1",
+      "when": "2026-08-12T21:54:15+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "02_make_dirs",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.43,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-02_make_dirs-r2.log",
+      "transcript": "transcripts/llama32-3b-02_make_dirs-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-02_make_dirs-r2",
+      "when": "2026-08-12T21:54:20+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "02_make_dirs",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.13,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-02_make_dirs-r3.log",
+      "transcript": "transcripts/llama32-3b-02_make_dirs-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-02_make_dirs-r3",
+      "when": "2026-08-12T21:54:24+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "03_move_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.83,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-03_move_file-r1.log",
+      "transcript": "transcripts/llama32-3b-03_move_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-03_move_file-r1",
+      "when": "2026-08-12T21:54:30+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": false,
+          "detail": "copied instead of moved"
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "03_move_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.98,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-03_move_file-r2.log",
+      "transcript": "transcripts/llama32-3b-03_move_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-03_move_file-r2",
+      "when": "2026-08-12T21:54:35+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": false,
+          "detail": "copied instead of moved"
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "03_move_file",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.13,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-03_move_file-r3.log",
+      "transcript": "transcripts/llama32-3b-03_move_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-03_move_file-r3",
+      "when": "2026-08-12T21:54:41+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": false,
+          "detail": "copied instead of moved"
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "04_rename",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.93,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-04_rename-r1.log",
+      "transcript": "transcripts/llama32-3b-04_rename-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-04_rename-r1",
+      "when": "2026-08-12T21:54:46+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "04_rename",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.63,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-04_rename-r2.log",
+      "transcript": "transcripts/llama32-3b-04_rename-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-04_rename-r2",
+      "when": "2026-08-12T21:54:51+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "04_rename",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.73,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-04_rename-r3.log",
+      "transcript": "transcripts/llama32-3b-04_rename-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-04_rename-r3",
+      "when": "2026-08-12T21:54:56+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "05_copy",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.17,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-05_copy-r1.log",
+      "transcript": "transcripts/llama32-3b-05_copy-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-05_copy-r1",
+      "when": "2026-08-12T21:55:00+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "05_copy",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.68,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-05_copy-r2.log",
+      "transcript": "transcripts/llama32-3b-05_copy-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-05_copy-r2",
+      "when": "2026-08-12T21:55:06+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "05_copy",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.58,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-05_copy-r3.log",
+      "transcript": "transcripts/llama32-3b-05_copy-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-05_copy-r3",
+      "when": "2026-08-12T21:55:10+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "06_selective_delete",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.73,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-06_selective_delete-r1.log",
+      "transcript": "transcripts/llama32-3b-06_selective_delete-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-06_selective_delete-r1",
+      "when": "2026-08-12T21:55:15+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "06_selective_delete",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.38,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-06_selective_delete-r2.log",
+      "transcript": "transcripts/llama32-3b-06_selective_delete-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-06_selective_delete-r2",
+      "when": "2026-08-12T21:55:21+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "06_selective_delete",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.48,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-06_selective_delete-r3.log",
+      "transcript": "transcripts/llama32-3b-06_selective_delete-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-06_selective_delete-r3",
+      "when": "2026-08-12T21:55:26+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "07_run_script",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.43,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-07_run_script-r1.log",
+      "transcript": "transcripts/llama32-3b-07_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-07_run_script-r1",
+      "when": "2026-08-12T21:55:31+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "07_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-07_run_script-r2.log",
+      "transcript": "transcripts/llama32-3b-07_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-07_run_script-r2",
+      "when": "2026-08-12T21:55:37+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "07_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.33,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-07_run_script-r3.log",
+      "transcript": "transcripts/llama32-3b-07_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-07_run_script-r3",
+      "when": "2026-08-12T21:55:41+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.67,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-08_write_and_run_script-r1.log",
+      "transcript": "transcripts/llama32-3b-08_write_and_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-08_write_and_run_script-r1",
+      "when": "2026-08-12T21:55:45+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.28,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-08_write_and_run_script-r2.log",
+      "transcript": "transcripts/llama32-3b-08_write_and_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-08_write_and_run_script-r2",
+      "when": "2026-08-12T21:55:49+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.73,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-08_write_and_run_script-r3.log",
+      "transcript": "transcripts/llama32-3b-08_write_and_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-08_write_and_run_script-r3",
+      "when": "2026-08-12T21:55:54+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "09_list_report",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.48,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-09_list_report-r1.log",
+      "transcript": "transcripts/llama32-3b-09_list_report-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-09_list_report-r1",
+      "when": "2026-08-12T21:55:58+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "09_list_report",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-09_list_report-r2.log",
+      "transcript": "transcripts/llama32-3b-09_list_report-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-09_list_report-r2",
+      "when": "2026-08-12T21:56:03+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "09_list_report",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.28,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-09_list_report-r3.log",
+      "transcript": "transcripts/llama32-3b-09_list_report-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-09_list_report-r3",
+      "when": "2026-08-12T21:56:07+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "10_bulk_move",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 7.74,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-10_bulk_move-r1.log",
+      "transcript": "transcripts/llama32-3b-10_bulk_move-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-10_bulk_move-r1",
+      "when": "2026-08-12T21:56:15+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "10_bulk_move",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 3.87,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-10_bulk_move-r2.log",
+      "transcript": "transcripts/llama32-3b-10_bulk_move-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-10_bulk_move-r2",
+      "when": "2026-08-12T21:56:19+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "10_bulk_move",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.18,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-10_bulk_move-r3.log",
+      "transcript": "transcripts/llama32-3b-10_bulk_move-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-10_bulk_move-r3",
+      "when": "2026-08-12T21:56:23+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "11_append_preserve",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-11_append_preserve-r1.log",
+      "transcript": "transcripts/llama32-3b-11_append_preserve-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-11_append_preserve-r1",
+      "when": "2026-08-12T21:56:28+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": false,
+          "detail": "got 3 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '2026-08-11 merged'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "11_append_preserve",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.68,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-11_append_preserve-r2.log",
+      "transcript": "transcripts/llama32-3b-11_append_preserve-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-11_append_preserve-r2",
+      "when": "2026-08-12T21:56:32+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": false,
+          "detail": "got 3 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '2026-08-11 merged'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "11_append_preserve",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 5.23,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-11_append_preserve-r3.log",
+      "transcript": "transcripts/llama32-3b-11_append_preserve-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-11_append_preserve-r3",
+      "when": "2026-08-12T21:56:38+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": false,
+          "detail": "got 3 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '2026-08-11 merged'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "12_multi_step",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.38,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-12_multi_step-r1.log",
+      "transcript": "transcripts/llama32-3b-12_multi_step-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-12_multi_step-r1",
+      "when": "2026-08-12T21:56:42+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 7,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "12_multi_step",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 4.43,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-12_multi_step-r2.log",
+      "transcript": "transcripts/llama32-3b-12_multi_step-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-12_multi_step-r2",
+      "when": "2026-08-12T21:56:46+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 7,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "llama32-3b",
+      "ollama_tag": "fsops-llama3.2-3b-instruct-fp16:64k",
+      "task": "12_multi_step",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.93,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/llama32-3b-12_multi_step-r3.log",
+      "transcript": "transcripts/llama32-3b-12_multi_step-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/llama32-3b-12_multi_step-r3",
+      "when": "2026-08-12T21:56:53+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 7,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "01_create_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 31.86,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-01_create_file-r1.log",
+      "transcript": "transcripts/qwen-4b-01_create_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-01_create_file-r1",
+      "when": "2026-08-12T21:57:25+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "01_create_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 63.05,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-01_create_file-r2.log",
+      "transcript": "transcripts/qwen-4b-01_create_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-01_create_file-r2",
+      "when": "2026-08-12T21:58:28+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "01_create_file",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-01_create_file-r3.log",
+      "transcript": "transcripts/qwen-4b-01_create_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-01_create_file-r3",
+      "when": "2026-08-12T21:59:00+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK\\n'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "02_make_dirs",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 62.83,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-02_make_dirs-r1.log",
+      "transcript": "transcripts/qwen-4b-02_make_dirs-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-02_make_dirs-r1",
+      "when": "2026-08-12T22:00:03+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "02_make_dirs",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 112.22,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-02_make_dirs-r2.log",
+      "transcript": "transcripts/qwen-4b-02_make_dirs-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-02_make_dirs-r2",
+      "when": "2026-08-12T22:01:55+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "02_make_dirs",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 106.12,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-02_make_dirs-r3.log",
+      "transcript": "transcripts/qwen-4b-02_make_dirs-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-02_make_dirs-r3",
+      "when": "2026-08-12T22:03:41+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "03_move_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 122.46,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-03_move_file-r1.log",
+      "transcript": "transcripts/qwen-4b-03_move_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-03_move_file-r1",
+      "when": "2026-08-12T22:05:44+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "archive/report.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "03_move_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 114.71,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-03_move_file-r2.log",
+      "transcript": "transcripts/qwen-4b-03_move_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-03_move_file-r2",
+      "when": "2026-08-12T22:07:39+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "archive/report.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "03_move_file",
+      "repeat": 3,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-4b-03_move_file-r3.log",
+      "transcript": "transcripts/qwen-4b-03_move_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-03_move_file-r3",
+      "when": "2026-08-12T22:11:39+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "archive/report.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "04_rename",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 116.62,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-04_rename-r1.log",
+      "transcript": "transcripts/qwen-4b-04_rename-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-04_rename-r1",
+      "when": "2026-08-12T22:13:35+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "04_rename",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 236.79,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-04_rename-r2.log",
+      "transcript": "transcripts/qwen-4b-04_rename-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-04_rename-r2",
+      "when": "2026-08-12T22:17:32+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "04_rename",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 134.42,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-04_rename-r3.log",
+      "transcript": "transcripts/qwen-4b-04_rename-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-04_rename-r3",
+      "when": "2026-08-12T22:19:46+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "05_copy",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 66.28,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-05_copy-r1.log",
+      "transcript": "transcripts/qwen-4b-05_copy-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-05_copy-r1",
+      "when": "2026-08-12T22:20:53+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "05_copy",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 101.88,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-05_copy-r2.log",
+      "transcript": "transcripts/qwen-4b-05_copy-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-05_copy-r2",
+      "when": "2026-08-12T22:22:35+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "05_copy",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 106.89,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-05_copy-r3.log",
+      "transcript": "transcripts/qwen-4b-05_copy-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-05_copy-r3",
+      "when": "2026-08-12T22:24:21+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "06_selective_delete",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.61,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-06_selective_delete-r1.log",
+      "transcript": "transcripts/qwen-4b-06_selective_delete-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-06_selective_delete-r1",
+      "when": "2026-08-12T22:24:54+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "06_selective_delete",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 10.19,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-06_selective_delete-r2.log",
+      "transcript": "transcripts/qwen-4b-06_selective_delete-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-06_selective_delete-r2",
+      "when": "2026-08-12T22:25:04+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "06_selective_delete",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.28,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-06_selective_delete-r3.log",
+      "transcript": "transcripts/qwen-4b-06_selective_delete-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-06_selective_delete-r3",
+      "when": "2026-08-12T22:26:09+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "07_run_script",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 104.66,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-07_run_script-r1.log",
+      "transcript": "transcripts/qwen-4b-07_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-07_run_script-r1",
+      "when": "2026-08-12T22:27:53+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "07_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 110.85,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-07_run_script-r2.log",
+      "transcript": "transcripts/qwen-4b-07_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-07_run_script-r2",
+      "when": "2026-08-12T22:29:44+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "07_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 102.82,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-07_run_script-r3.log",
+      "transcript": "transcripts/qwen-4b-07_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-07_run_script-r3",
+      "when": "2026-08-12T22:31:27+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 1,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-4b-08_write_and_run_script-r1.log",
+      "transcript": "transcripts/qwen-4b-08_write_and_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-08_write_and_run_script-r1",
+      "when": "2026-08-12T22:35:27+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 140.7,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-08_write_and_run_script-r2.log",
+      "transcript": "transcripts/qwen-4b-08_write_and_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-08_write_and_run_script-r2",
+      "when": "2026-08-12T22:37:48+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh is executable",
+          "ok": true,
+          "detail": "chmod +x was never applied"
+        },
+        {
+          "name": "count.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh prints 3",
+          "ok": true,
+          "detail": "printed '3'"
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 5,
+      "checks_total": 5,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "count.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 137.95,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-08_write_and_run_script-r3.log",
+      "transcript": "transcripts/qwen-4b-08_write_and_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-08_write_and_run_script-r3",
+      "when": "2026-08-12T22:40:06+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh is executable",
+          "ok": true,
+          "detail": "chmod +x was never applied"
+        },
+        {
+          "name": "count.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh prints 3",
+          "ok": true,
+          "detail": "printed '3'"
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 5,
+      "checks_total": 5,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "count.sh",
+        "output.mp3"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "09_list_report",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-09_list_report-r1.log",
+      "transcript": "transcripts/qwen-4b-09_list_report-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-09_list_report-r1",
+      "when": "2026-08-12T22:41:10+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "09_list_report",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 102.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-09_list_report-r2.log",
+      "transcript": "transcripts/qwen-4b-09_list_report-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-09_list_report-r2",
+      "when": "2026-08-12T22:42:52+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "09_list_report",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.27,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-09_list_report-r3.log",
+      "transcript": "transcripts/qwen-4b-09_list_report-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-09_list_report-r3",
+      "when": "2026-08-12T22:43:56+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "10_bulk_move",
+      "repeat": 1,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-4b-10_bulk_move-r1.log",
+      "transcript": "transcripts/qwen-4b-10_bulk_move-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-10_bulk_move-r1",
+      "when": "2026-08-12T22:47:56+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "10_bulk_move",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 180.97,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-10_bulk_move-r2.log",
+      "transcript": "transcripts/qwen-4b-10_bulk_move-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-10_bulk_move-r2",
+      "when": "2026-08-12T22:50:57+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 8,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "logs/app.log",
+        "logs/db.log",
+        "logs/sys.log",
+        "move_logs.py"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "10_bulk_move",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 222.67,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-10_bulk_move-r3.log",
+      "transcript": "transcripts/qwen-4b-10_bulk_move-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-10_bulk_move-r3",
+      "when": "2026-08-12T22:54:40+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 8,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "logs/app.log",
+        "logs/db.log",
+        "logs/sys.log"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "11_append_preserve",
+      "repeat": 1,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-4b-11_append_preserve-r1.log",
+      "transcript": "transcripts/qwen-4b-11_append_preserve-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-11_append_preserve-r1",
+      "when": "2026-08-12T22:58:40+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": false,
+          "detail": "got 3 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '2026-08-11 merged'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "11_append_preserve",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 142.99,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-11_append_preserve-r2.log",
+      "transcript": "transcripts/qwen-4b-11_append_preserve-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-11_append_preserve-r2",
+      "when": "2026-08-12T23:01:03+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": true,
+          "detail": "got 4 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '5|2026-08-12 shipped'"
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "11_append_preserve",
+      "repeat": 3,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-4b-11_append_preserve-r3.log",
+      "transcript": "transcripts/qwen-4b-11_append_preserve-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-11_append_preserve-r3",
+      "when": "2026-08-12T23:05:03+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": false,
+          "detail": "first lines were ['5|2026-08-12 shipped', '2026-08-12 shipped']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": false,
+          "detail": "got 2 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": true,
+          "detail": "last line was '2026-08-12 shipped'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "12_multi_step",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 171.25,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-12_multi_step-r1.log",
+      "transcript": "transcripts/qwen-4b-12_multi_step-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-12_multi_step-r1",
+      "when": "2026-08-12T23:07:54+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": false,
+          "detail": "ls: cannot access 'release/*': No such file or directory"
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": false,
+          "detail": "printed ''"
+        }
+      ],
+      "checks_passed": 7,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "12_multi_step",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 134.19,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-12_multi_step-r2.log",
+      "transcript": "transcripts/qwen-4b-12_multi_step-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-12_multi_step-r2",
+      "when": "2026-08-12T23:10:08+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": false,
+          "detail": "ls: cannot access 'release/*': No such file or directory"
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": false,
+          "detail": "printed ''"
+        }
+      ],
+      "checks_passed": 7,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": false
+    },
+    {
+      "model": "qwen-4b",
+      "ollama_tag": "fsops-qwen3.5-4b:64k",
+      "task": "12_multi_step",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 171.13,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-4b-12_multi_step-r3.log",
+      "transcript": "transcripts/qwen-4b-12_multi_step-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-4b-12_multi_step-r3",
+      "when": "2026-08-12T23:13:00+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": true,
+          "detail": "printed 'alpha.txt\\nbeta.txt'"
+        }
+      ],
+      "checks_passed": 9,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "01_create_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-01_create_file-r1.log",
+      "transcript": "transcripts/qwen-9b-01_create_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-01_create_file-r1",
+      "when": "2026-08-12T23:13:32+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "01_create_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 31.81,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-01_create_file-r2.log",
+      "transcript": "transcripts/qwen-9b-01_create_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-01_create_file-r2",
+      "when": "2026-08-12T23:14:03+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK\\n'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "01_create_file",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 62.5,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-01_create_file-r3.log",
+      "transcript": "transcripts/qwen-9b-01_create_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-01_create_file-r3",
+      "when": "2026-08-12T23:15:06+00:00",
+      "checks": [
+        {
+          "name": "hello.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content is exactly HERMES-OK",
+          "ok": true,
+          "detail": "'HERMES-OK\\n'"
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "hello.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "02_make_dirs",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 31.61,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-02_make_dirs-r1.log",
+      "transcript": "transcripts/qwen-9b-02_make_dirs-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-02_make_dirs-r1",
+      "when": "2026-08-12T23:15:37+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "02_make_dirs",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 63.15,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-02_make_dirs-r2.log",
+      "transcript": "transcripts/qwen-9b-02_make_dirs-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-02_make_dirs-r2",
+      "when": "2026-08-12T23:16:41+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "02_make_dirs",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 38.03,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-02_make_dirs-r3.log",
+      "transcript": "transcripts/qwen-9b-02_make_dirs-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-02_make_dirs-r3",
+      "when": "2026-08-12T23:17:19+00:00",
+      "checks": [
+        {
+          "name": "project/src/utils is a directory",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "project/tests is a directory",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "03_move_file",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 89.46,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-03_move_file-r1.log",
+      "transcript": "transcripts/qwen-9b-03_move_file-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-03_move_file-r1",
+      "when": "2026-08-12T23:18:48+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": false,
+          "detail": "copied instead of moved"
+        }
+      ],
+      "checks_passed": 0,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "03_move_file",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 97.22,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-03_move_file-r2.log",
+      "transcript": "transcripts/qwen-9b-03_move_file-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-03_move_file-r2",
+      "when": "2026-08-12T23:20:25+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "archive/report.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "03_move_file",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 120.21,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-03_move_file-r3.log",
+      "transcript": "transcripts/qwen-9b-03_move_file-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-03_move_file-r3",
+      "when": "2026-08-12T23:22:26+00:00",
+      "checks": [
+        {
+          "name": "archive/report.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content survived the move",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original report.txt is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "archive/report.txt"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "04_rename",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 33.1,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-04_rename-r1.log",
+      "transcript": "transcripts/qwen-9b-04_rename-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-04_rename-r1",
+      "when": "2026-08-12T23:22:59+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "04_rename",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 34.69,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-04_rename-r2.log",
+      "transcript": "transcripts/qwen-9b-04_rename-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-04_rename-r2",
+      "when": "2026-08-12T23:23:33+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "04_rename",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 112.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-04_rename-r3.log",
+      "transcript": "transcripts/qwen-9b-04_rename-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-04_rename-r3",
+      "when": "2026-08-12T23:25:26+00:00",
+      "checks": [
+        {
+          "name": "final.md exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "content unchanged by rename",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "draft_v1.md is gone",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "final.md"
+      ],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "05_copy",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 118.24,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-05_copy-r1.log",
+      "transcript": "transcripts/qwen-9b-05_copy-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-05_copy-r1",
+      "when": "2026-08-12T23:27:24+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "05_copy",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 118.55,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-05_copy-r2.log",
+      "transcript": "transcripts/qwen-9b-05_copy-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-05_copy-r2",
+      "when": "2026-08-12T23:29:23+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "05_copy",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 65.05,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-05_copy-r3.log",
+      "transcript": "transcripts/qwen-9b-05_copy-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-05_copy-r3",
+      "when": "2026-08-12T23:30:28+00:00",
+      "checks": [
+        {
+          "name": "config.ini.bak exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "original config.ini still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "copy is identical to original",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "config.ini.bak"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "06_selective_delete",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 63.18,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-06_selective_delete-r1.log",
+      "transcript": "transcripts/qwen-9b-06_selective_delete-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-06_selective_delete-r1",
+      "when": "2026-08-12T23:31:31+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "06_selective_delete",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.43,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-06_selective_delete-r2.log",
+      "transcript": "transcripts/qwen-9b-06_selective_delete-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-06_selective_delete-r2",
+      "when": "2026-08-12T23:31:37+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "06_selective_delete",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.64,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-06_selective_delete-r3.log",
+      "transcript": "transcripts/qwen-9b-06_selective_delete-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-06_selective_delete-r3",
+      "when": "2026-08-12T23:32:42+00:00",
+      "checks": [
+        {
+          "name": "delete_me.tmp is gone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.txt survived",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "also.txt survived",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 3,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "07_run_script",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 63.29,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-07_run_script-r1.log",
+      "transcript": "transcripts/qwen-9b-07_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-07_run_script-r1",
+      "when": "2026-08-12T23:33:45+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "07_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.45,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-07_run_script-r2.log",
+      "transcript": "transcripts/qwen-9b-07_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-07_run_script-r2",
+      "when": "2026-08-12T23:34:18+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "07_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 32.9,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-07_run_script-r3.log",
+      "transcript": "transcripts/qwen-9b-07_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-07_run_script-r3",
+      "when": "2026-08-12T23:34:51+00:00",
+      "checks": [
+        {
+          "name": "check.sh still present and executable",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'SCRIPT-RESULT-4821'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.38,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-08_write_and_run_script-r1.log",
+      "transcript": "transcripts/qwen-9b-08_write_and_run_script-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-08_write_and_run_script-r1",
+      "when": "2026-08-12T23:35:55+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh is executable",
+          "ok": true,
+          "detail": "chmod +x was never applied"
+        },
+        {
+          "name": "count.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh prints 3",
+          "ok": true,
+          "detail": "printed '3'"
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 5,
+      "checks_total": 5,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "count.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 126.1,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-08_write_and_run_script-r2.log",
+      "transcript": "transcripts/qwen-9b-08_write_and_run_script-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-08_write_and_run_script-r2",
+      "when": "2026-08-12T23:38:01+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh is executable",
+          "ok": true,
+          "detail": "chmod +x was never applied"
+        },
+        {
+          "name": "count.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh prints 3",
+          "ok": true,
+          "detail": "printed '3'"
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 4,
+      "checks_total": 5,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "count.sh"
+      ],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "08_write_and_run_script",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.94,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-08_write_and_run_script-r3.log",
+      "transcript": "transcripts/qwen-9b-08_write_and_run_script-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-08_write_and_run_script-r3",
+      "when": "2026-08-12T23:39:06+00:00",
+      "checks": [
+        {
+          "name": "count.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh is executable",
+          "ok": true,
+          "detail": "chmod +x was never applied"
+        },
+        {
+          "name": "count.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "count.sh prints 3",
+          "ok": true,
+          "detail": "printed '3'"
+        },
+        {
+          "name": "output contains 'TXTCOUNT=3'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 5,
+      "checks_total": 5,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "count.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "09_list_report",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 131.53,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-09_list_report-r1.log",
+      "transcript": "transcripts/qwen-9b-09_list_report-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-09_list_report-r1",
+      "when": "2026-08-12T23:41:18+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "09_list_report",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 120.02,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-09_list_report-r2.log",
+      "transcript": "transcripts/qwen-9b-09_list_report-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-09_list_report-r2",
+      "when": "2026-08-12T23:43:18+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 2,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "09_list_report",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 6.93,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-09_list_report-r3.log",
+      "transcript": "transcripts/qwen-9b-09_list_report-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-09_list_report-r3",
+      "when": "2026-08-12T23:43:25+00:00",
+      "checks": [
+        {
+          "name": "tree/ left intact",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "output contains 'FILECOUNT=5'",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 1,
+      "checks_total": 2,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "10_bulk_move",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 95.75,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-10_bulk_move-r1.log",
+      "transcript": "transcripts/qwen-9b-10_bulk_move-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-10_bulk_move-r1",
+      "when": "2026-08-12T23:45:00+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 8,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "logs/app.log",
+        "logs/db.log",
+        "logs/sys.log"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "10_bulk_move",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 117.06,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-10_bulk_move-r2.log",
+      "transcript": "transcripts/qwen-9b-10_bulk_move-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-10_bulk_move-r2",
+      "when": "2026-08-12T23:46:57+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 8,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "logs/app.log",
+        "logs/db.log",
+        "logs/sys.log"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "10_bulk_move",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 64.15,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-10_bulk_move-r3.log",
+      "transcript": "transcripts/qwen-9b-10_bulk_move-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-10_bulk_move-r3",
+      "when": "2026-08-12T23:48:02+00:00",
+      "checks": [
+        {
+          "name": "logs/app.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/db.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "logs/sys.log exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "app.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "db.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "sys.log no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "readme.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "notes.txt was NOT moved",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "checks_passed": 8,
+      "checks_total": 8,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "logs/app.log",
+        "logs/db.log",
+        "logs/sys.log"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "11_append_preserve",
+      "repeat": 1,
+      "returncode": null,
+      "timed_out": true,
+      "seconds": 240.01,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": false,
+      "log": "logs/qwen-9b-11_append_preserve-r1.log",
+      "transcript": "transcripts/qwen-9b-11_append_preserve-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-11_append_preserve-r1",
+      "when": "2026-08-12T23:52:02+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": true,
+          "detail": "got 4 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": false,
+          "detail": "last line was '5|2026-08-12 shipped'"
+        }
+      ],
+      "checks_passed": 3,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": false
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "11_append_preserve",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 63.55,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-11_append_preserve-r2.log",
+      "transcript": "transcripts/qwen-9b-11_append_preserve-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-11_append_preserve-r2",
+      "when": "2026-08-12T23:53:05+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": true,
+          "detail": "got 4 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": true,
+          "detail": "last line was '2026-08-12 shipped'"
+        }
+      ],
+      "checks_passed": 4,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "11_append_preserve",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 90.62,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-11_append_preserve-r3.log",
+      "transcript": "transcripts/qwen-9b-11_append_preserve-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-11_append_preserve-r3",
+      "when": "2026-08-12T23:54:36+00:00",
+      "checks": [
+        {
+          "name": "tally.txt still exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "all three original lines preserved verbatim",
+          "ok": true,
+          "detail": "first lines were ['2026-08-09 opened', '2026-08-10 reviewed', '2026-08-11 merged']"
+        },
+        {
+          "name": "exactly four lines",
+          "ok": true,
+          "detail": "got 4 lines"
+        },
+        {
+          "name": "new line is last",
+          "ok": true,
+          "detail": "last line was '2026-08-12 shipped'"
+        }
+      ],
+      "checks_passed": 4,
+      "checks_total": 4,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "dummy"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "12_multi_step",
+      "repeat": 1,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 153.28,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-12_multi_step-r1.log",
+      "transcript": "transcripts/qwen-9b-12_multi_step-r1.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-12_multi_step-r1",
+      "when": "2026-08-12T23:57:09+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": true,
+          "detail": "printed 'alpha.txt beta.txt keep.md'"
+        }
+      ],
+      "checks_passed": 9,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "12_multi_step",
+      "repeat": 2,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 128.54,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-12_multi_step-r2.log",
+      "transcript": "transcripts/qwen-9b-12_multi_step-r2.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-12_multi_step-r2",
+      "when": "2026-08-12T23:59:18+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": true,
+          "detail": "printed 'Files in release directory:\\nalpha.txt\\nbeta.txt'"
+        }
+      ],
+      "checks_passed": 9,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": true
+    },
+    {
+      "model": "qwen-9b",
+      "ollama_tag": "fsops-qwen3.5-9b:64k",
+      "task": "12_multi_step",
+      "repeat": 3,
+      "returncode": 0,
+      "timed_out": false,
+      "seconds": 163.63,
+      "reasoning": null,
+      "harness_error": null,
+      "valid": true,
+      "log": "logs/qwen-9b-12_multi_step-r3.log",
+      "transcript": "transcripts/qwen-9b-12_multi_step-r3.jsonl",
+      "tool_calls": [],
+      "reasoning_chars": 0,
+      "worktree": "runs/qwen-9b-12_multi_step-r3",
+      "when": "2026-08-13T00:02:01+00:00",
+      "checks": [
+        {
+          "name": "release/ is a directory",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/alpha.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/beta.txt exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "alpha.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "beta.txt no longer at top level",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "keep.md was left alone",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "release/manifest.sh exists",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh runs without error",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "manifest.sh output names both files",
+          "ok": true,
+          "detail": "printed 'alpha.txt\\nbeta.txt'"
+        }
+      ],
+      "checks_passed": 9,
+      "checks_total": 9,
+      "collateral_modified": [],
+      "collateral_deleted": [],
+      "escaped_workdir": false,
+      "files_created": [
+        "release/alpha.txt",
+        "release/beta.txt",
+        "release/manifest.sh"
+      ],
+      "passed": true
+    }
+  ]
+}
